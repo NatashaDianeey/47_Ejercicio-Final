@@ -13,6 +13,7 @@ $(document).ready( function(){
 /* Etapa 2 */
  function printNews(){
         $(".callout-news p").text("NUEVAS RECETAS");
+       
     };
     
    
@@ -20,9 +21,15 @@ $(document).ready( function(){
 * Función que se encarga de pintar TODAS las recetas que tengan 
 * marcado el atributo "highlighted" como TRUE
 */
-function renderHighlightedRecipes(recipesArray) {
-	console.log('Recipes: ', recipesArray);
-}
+/* Etapa 3 */
+function renderHighlightedRecipes() {
+  
+    $.each( recipesArray, function( key, value ) {
+        if(value.highlighted==true){
+            renderRecipe(value);
+        };
+    });
+};
 
 /*
 * Función que se encarga de pintar UNA recetas que tenga 
