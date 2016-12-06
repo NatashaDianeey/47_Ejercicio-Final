@@ -4,6 +4,8 @@ $(document).ready( function(){
     $('.js-back').hide();
     printNews();
     renderHighlightedRecipes(recipesArray);
+    
+    renderActivities(activities);
 });
 
 /* Etapa 2 */
@@ -33,6 +35,7 @@ function renderHighlightedRecipes() {
 * Aqui se tiene que crear el HTML que esta en el 
 * archivo "templates/templates-recipe.html"
 */
+/* Etapa 4 */
 function renderRecipe(recipe) {
     
     var item = $("<a class='item-recipe' href='#'></a>");
@@ -70,9 +73,19 @@ function renderRecipe(recipe) {
 /*
 * Función que se encarga de pintar todas las actividades
 */
+/* Etapa 5 */
 function renderActivities(activitiesArray) {
-	console.log('Activities: ', activitiesArray);
-}
+  	console.log('Activities: ', activitiesArray);
+ 	
+   
+    $.each( activitiesArray, function( key, value ){
+        renderActivity(value);
+    });
+     if(activitiesArray.length>0){
+        $('div .wrapper-message').hide();
+    }
+    
+  };
 
 /*
 * Función que se encarga de pintar una actividad
