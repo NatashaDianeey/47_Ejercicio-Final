@@ -92,8 +92,29 @@ function renderActivities(activitiesArray) {
 * Aqui se tiene que crear el HTML que esta en el 
 * archivo "templates/templates-activity.html"
 */
+/* Etapa 6 */
 function renderActivity(recipe) {
-	
-}
+	var templateActivity = 
+        '<a href="#" class="item-activity">' +
+            '<span class="attribution">' +
+                '<span class="avatar">' +
+                    '<img src="<%= userAvatar %>" class="image-avatar">' +
+                '</span>' +
+                '<span class="meta">' +
+                    '<span class="author"> <%= userName %> </span> made' +
+                    '<span class="recipe"> <%= recipeName %> </span>: ' +  
+                    '<span class="location"> <%= place %> </span>' +
+                '</span>' +
+            '</span>' +
+            '<div class="bg-image" style="background-image: url(&quot;<%= image %>&quot;)"></div>' +
+        '</a>';
 
+	var guardaTodo = _.templateActivity(templateActivity);
+  
+	var enlace = guardaTodo(activity);
+	console.log(templateActivity);
+  
+	var elemento = $(enlace);
+	$('.list-activities').append(elemento);
+}
 
