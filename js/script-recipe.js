@@ -1,5 +1,10 @@
 /* Etapa 7 */
 $(document).ready( function(){
+    
+    /* Etapa 10 */
+    $('.js-back').on('click', function() {
+        window.location = 'index.html';
+    });
 
     $('.js-menu').hide();
     console.log('Esta listo el documento');
@@ -21,5 +26,3 @@ $(document).ready( function(){
         $('.js-show-recipe').removeClass('active');
     });
 });
-
-
